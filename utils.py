@@ -3,7 +3,7 @@ import asyncio
 from collections import Counter
 
 from config import ACCESS_TOKEN
-from exeptions import GitHubAPIError
+from exсeptions import GitHubAPIError
 
 
 async def get_owner_url(owner_username):

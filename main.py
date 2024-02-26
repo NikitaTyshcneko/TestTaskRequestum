@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 
 from utils import find_similar_repos
-from exeptions import GitHubAPIError
+from exсeptions import GitHubAPIError
 
 app = Flask(__name__)
 
