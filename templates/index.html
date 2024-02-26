@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository</title>
+</head>
+<body>
+    <form method="post" action="/projects">
+        <label for="repo_url">Repo URL:</label>
+        <input type="text" id="repo_url" name="repo_url">
+        <button type="submit">Go</button>
+    </form>
+    {% if projects %}
+    <span>
+        <b>similar to:</b>
+        <a href={{ url }}>{{ url }}</a>
+    </span>
+
+
+        {% for project in projects %}
+            <p>
+                <a href={{project.repo_owner_url}}>{{ project.owner }}</a>/
+                <a href={{project.repo_url}}>{{ project.repo_name }}</a>
+                - {{ project.common_contributors }}
+            </p>
+        {% endfor %}
+
+    {% endif %}
+{% if is_error%}
+<b>{{ message }}</b>
+{% endif %}
+
+</body>
+</html>
